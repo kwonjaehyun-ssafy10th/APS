@@ -1,0 +1,23 @@
+package 유사_칸토어_비트열;
+
+import java.math.BigInteger;
+
+//class Solution {
+//    public int solution(int n, long l, long r) {
+//        int answer = 0;
+//        return answer;
+//    }
+//}
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//    	StringBuilder sb = new StringBuilder();
+//    	StringBuilder nsb  = new StringBuilder();
+//    	sb.append("1");
+//    	for (BigInteger i = BigInteger.valueOf(1); i.compareTo(BigInteger.valueOf(sb.length())) < 0; i = i.add(BigInteger.ONE)) {
+//    		if (sb.charAt((Integer) )
+//    	}
+//    	System.out.println(sb);
+//    	
+//    }
+//}

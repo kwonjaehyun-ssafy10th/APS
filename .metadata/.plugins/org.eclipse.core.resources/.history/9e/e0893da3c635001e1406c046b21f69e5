@@ -1,0 +1,22 @@
+package 유사_칸토어_비트열;
+
+//class Solution {
+//    public int solution(int n, long l, long r) {
+//        int answer = 0;
+//        return answer;
+//    }
+//}
+
+public class Solution {
+    public static void main(String[] args) {
+    	StringBuilder sb = new StringBuilder();
+    	StringBuilder nsb  = new StringBuilder();
+    	int i = 1;
+    	sb.append("1");
+    	for (String s: sb) {
+    		System.out.println(s);
+    	}
+    	System.out.println(sb);
+    	
+    }
+}
