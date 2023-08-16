@@ -29,8 +29,7 @@ public class Solution {
 					}
 					else {
 //						cnt += num;
-						cnt += num--;
-						
+						cnt += --num;
 					}
 					st.pop();
 				}
