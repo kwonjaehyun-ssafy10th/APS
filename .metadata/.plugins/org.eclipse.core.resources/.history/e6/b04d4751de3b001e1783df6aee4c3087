@@ -24,7 +24,7 @@ public class Solution {
 				for (int c = 0; c < N; c++) {
 					map[r][c] = line.charAt(c);
 				}
-//			System.out.println(Arrays.toString(map[r]));	
+			System.out.println(Arrays.toString(map[r]));	
 			}
 
 			int longestH = 0;
@@ -34,20 +34,20 @@ public class Solution {
 			int ans = 0;
 			int temp = 0;
 			int[] arr = new int[4];
-			for (int r = 0; r < N; r++) {
-				for (int c = 0; c < N; c++) {
+			for (int r = 0; r < N - 1; r++) {
+				for (int c = 0; c < N - 1; c++) {
 					length: for (int i = N - 1; i > c; i--) {
 						boolean flagH = true;
 						boolean flagV = true;
-						for (int j = 0; j < (i - c + 1) / 2; j++) {
+						for (int j = c; j < (i - c) / 2 + c; j++) {
 							if (flagH) {
-								if (map[r][c + j] != map[r][i - j]) {
+								if (map[r][j] != map[r][i - j]) {
 									flagH = false;
 								}
 							}
 							if (flagV) {
-								if (map[c + j][r] != map[i - j][r]) {
-									flagV = false;	
+								if (map[j][r] != map[i - j][r]) {
+									flagV = false;
 								}
 							}
 							
@@ -66,7 +66,7 @@ public class Solution {
 						if (flagH || flagV) {
 							if (temp > ans) {
 //								System.out.println("ans: " + ans + ", temp: " + temp);
-//								System.out.println(String.format("(t, r, c, i, temp): (%d, %d, %d, %d, %d)", t, r, c, i, temp));
+//								System.out.println(String.format("(t, r, c, i, j): (%d, %d, %d, %d)", t, r, c, i));
 								ans = temp;
 								
 							}
@@ -78,7 +78,7 @@ public class Solution {
 				}
 			}
 			System.out.println(String.format("#%d %d", t, ans));
-//			break;
+			break;
 		}
 
 		sc.close();

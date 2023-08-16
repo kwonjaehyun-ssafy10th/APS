@@ -67,6 +67,7 @@ public class Solution {
 							if (temp > ans) {
 //								System.out.println("ans: " + ans + ", temp: " + temp);
 //								System.out.println(String.format("(t, r, c, i, temp): (%d, %d, %d, %d, %d)", t, r, c, i, temp));
+//								char[] arr = new char[i - c]
 								ans = temp;
 								
 							}

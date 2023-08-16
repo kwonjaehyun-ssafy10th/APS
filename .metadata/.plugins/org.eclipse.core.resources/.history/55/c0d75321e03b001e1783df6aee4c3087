@@ -39,7 +39,7 @@ public class Solution {
 					length: for (int i = N - 1; i > c; i--) {
 						boolean flagH = true;
 						boolean flagV = true;
-						for (int j = 0; j < (i - c + 1) / 2; j++) {
+						for (int j = 0; j < (i - c) / 2; j++) {
 							if (flagH) {
 								if (map[r][c + j] != map[r][i - j]) {
 									flagH = false;

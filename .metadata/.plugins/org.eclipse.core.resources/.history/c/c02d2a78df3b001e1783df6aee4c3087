@@ -39,7 +39,7 @@ public class Solution {
 					length: for (int i = N - 1; i > c; i--) {
 						boolean flagH = true;
 						boolean flagV = true;
-						for (int j = 0; j < (i - c + 1) / 2; j++) {
+						for (int j = 0; j < (i - c) / 2; j++) {
 							if (flagH) {
 								if (map[r][c + j] != map[r][i - j]) {
 									flagH = false;
@@ -57,16 +57,20 @@ public class Solution {
 							longestH = i - c + 1;
 //							stopH = true;
 							temp = longestH;
+							System.out.println(String.format("flagH, (t, r, c, i): (%d, %d, %d, %d)", t, r, c, i));
+							System.out.println(temp);
 						}
 						if (flagV) {
 							longestV = i - c + 1;
 //							stopV = true;
 							temp = longestV;
+							System.out.println(String.format("flagV, (t, r, c, i): (%d, %d, %d, %d)", t, r, c, i));
+							System.out.println(temp);
 						}
 						if (flagH || flagV) {
 							if (temp > ans) {
 //								System.out.println("ans: " + ans + ", temp: " + temp);
-//								System.out.println(String.format("(t, r, c, i, temp): (%d, %d, %d, %d, %d)", t, r, c, i, temp));
+//								System.out.println(String.format("(t, r, c, i): (%d, %d, %d, %d)", t, r, c, i));
 								ans = temp;
 								
 							}
