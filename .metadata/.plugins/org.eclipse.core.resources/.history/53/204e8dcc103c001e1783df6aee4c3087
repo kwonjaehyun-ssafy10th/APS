@@ -29,7 +29,6 @@ public class Solution {
 				} else {
 					if (prev == '(') {
 						laser.add(i);
-						idx.pop();
 					}
 					else {
 						int[] arr = {idx.pop(), i};
@@ -43,14 +42,10 @@ public class Solution {
 				System.out.println(Arrays.toString(r));
 				int num = 0;
 				for (int i: laser) {
-					if (r[0] < i && i < r[1]) {
-//						System.out.println(i);
-						num++;
-//						System.out.println("num: " + num);
-					}
+					if (r[0] < i && i < r[1]) num++;
 				}
 				cnt += ++num;
-//				System.out.println(String.format("cnt: %d", cnt));
+				System.out.println(String.format("cnt: %d", cnt));
 			}
 //			System.out.println(rod);
 			System.out.println(laser);
