@@ -1,0 +1,34 @@
+package Stack2.계산기1_1222;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Solution {
+
+	public static void main(String[] args) {
+//		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(input);
+		
+		int T = 10;
+		for (int t = 1; t <= T; t++) {
+			int len = sc.nextInt();
+			String f = sc.next();
+			
+			Stack<Character> op = new Stack<>();			
+			
+			String p = "";
+			for (int i = 0; i < len; i++) {
+				char c = f.charAt(i);
+				if (c == '+') op.add(c);
+				else p += c;
+			}
+			System.out.println(p);
+			
+		}
+		
+		sc.close();
+	}
+	
+	public static String input = "";
+
+}
