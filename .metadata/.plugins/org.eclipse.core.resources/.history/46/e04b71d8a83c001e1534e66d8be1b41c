@@ -27,10 +27,20 @@ public class Solution {
 					if (prev == '(') {
 						cnt += st.size();
 					}
-					else cnt++;
 				}
 				prev = c;
 				
+				if (st.isEmpty()) {
+					int num = 0;
+					for (int j = i; j > 0; j--) {
+						c = line.charAt(j);
+						if (c == ')') num++;
+						else {
+							cnt += num;
+							break;
+						}
+					}
+				}
 			}
 			
 		

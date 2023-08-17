@@ -9,8 +9,8 @@ import java.util.Stack;
 public class Solution {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-//		Scanner sc = new Scanner(input);
+//		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(input);
 		
 		int T = sc.nextInt();
 		for (int t = 1; t <= T; t++) {
@@ -23,16 +23,16 @@ public class Solution {
 				if (c == '(') {
 					st.push(c);
 				} else {
-					st.pop();
 					if (prev == '(') {
 						cnt += st.size();
 					}
-					else cnt++;
+					else {
+
+					}
+					st.pop();
 				}
 				prev = c;
-				
 			}
-			
 		
 			System.out.println(String.format("#%d %d", t, cnt));
 		}

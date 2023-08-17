@@ -23,16 +23,17 @@ public class Solution {
 				if (c == '(') {
 					st.push(c);
 				} else {
-					st.pop();
 					if (prev == '(') {
+						st.pop();
 						cnt += st.size();
 					}
-					else cnt++;
+					else {
+
+					}
+					st.pop();
 				}
 				prev = c;
-				
 			}
-			
 		
 			System.out.println(String.format("#%d %d", t, cnt));
 		}
