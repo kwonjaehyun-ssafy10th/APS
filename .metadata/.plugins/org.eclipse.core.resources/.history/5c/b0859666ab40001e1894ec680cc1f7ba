@@ -87,11 +87,7 @@ public class Solution {
 	}
 	
 	public static void append(SinglyLinkedList sll, int y, Node[] apnd) {
-		Node cur = sll.head;
-		while (cur.link != null) {
-			cur = cur.link;
-		}
-		cur.link = apnd[0];
+		
 	}
 
 
