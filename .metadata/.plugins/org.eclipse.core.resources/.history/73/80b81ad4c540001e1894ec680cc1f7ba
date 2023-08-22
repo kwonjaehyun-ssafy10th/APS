@@ -1,4 +1,4 @@
-package Day1_출력.a와_b_출력하기;
+package a와_b_출력하기;
 
 import java.util.Scanner;
 

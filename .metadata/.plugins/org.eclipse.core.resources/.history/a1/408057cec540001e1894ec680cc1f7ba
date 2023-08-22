@@ -1,4 +1,4 @@
-package Day1_출력.문자열_출력하기;
+package 문자열_출력하기;
 
 import java.util.Scanner;
 
