@@ -1,13 +1,13 @@
 package Day2_출력_연산.문자열_돌리기;
 
-import java.util.Scanner;
-
-public class Solution {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String a = sc.next();
-        for (int i = 0; i < a.length(); i++) {
-        	System.out.println(a.charAt(i));
-        }
+class Solution {
+    public String solution(String my_string, String overwrite_string, int s) {
+        String answer = "";
+        
+        answer += my_string.substring(0, s);
+        answer += overwrite_string;
+        answer += my_string.substring(s + overwrite_string.length());
+        
+        return answer;
     }
 }
