@@ -1,5 +1,13 @@
 package Day2_출력_연산.덧셈식_출력하기;
 
-public class Solution {
+import java.util.Scanner;
 
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        System.out.println(String.format("%d + %d = %d", a, b, a + b));
+    }
 }
