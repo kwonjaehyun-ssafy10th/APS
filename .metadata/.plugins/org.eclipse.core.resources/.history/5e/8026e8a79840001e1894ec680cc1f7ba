@@ -1,0 +1,31 @@
+package Linked_List.암호문1_1228;
+
+import java.util.Scanner;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int T = 10;
+		for (int t = 1; t <= T; t++) {
+			int N = sc.nextInt();
+			Node[] crypt = new Node[N];
+			for (int n = 0; n < N; n++) {
+				crypt[n] = Node(sc.next());
+			}
+		}
+		
+		
+		sc.close();
+	}
+
+}
+
+class Node {
+	public int data;
+	public Node link;
+	public Node(int data) {
+		this.data = data;
+	}
+}
