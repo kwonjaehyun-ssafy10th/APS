@@ -1,0 +1,55 @@
+package start.단순_2진_암호코드_1240;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Solution {
+
+	public static void main(String[] args) {
+//		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(input);
+		
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) {
+			int N = sc.nextInt(), M = sc.nextInt();
+			int n = 0;
+			char[] arr = new char[M];
+			outer: while (n < N) {
+				arr = sc.next().toCharArray();
+				for (int m = 0; m < M; m++) {
+					if (arr[m] == '1') break outer;
+					
+				}
+			}
+			int idx = M - 1;
+			for (int m = 55; m < M; m++) {
+				if (arr[m - 1] == '1' && arr[m] == '0') idx = m - 1;
+			}
+			idx -= 55;
+			System.out.println(idx);
+			char[][] code = new char[8][7];
+			System.out.println(Arrays.toString(code));
+			for (int i = 0; i < 8; i++) {
+				code[i] = Arrays.copyOfRange(arr, idx + 7 * i, idx + 7 * (i + 1));
+				System.out.println(Arrays.toString(code[i]));
+			}
+			
+		}
+		
+		sc.close();
+	}
+	
+	static String input = "1\r\n" + 
+			"10 70\r\n" + 
+			"0000000000000000000000000000000000000000000000000000000000000000000000\r\n" + 
+			"0000011101101100010111011011000101100010001101001001101110110000000000\r\n" + 
+			"0000011101101100010111011011000101100010001101001001101110110000000000\r\n" + 
+			"0000011101101100010111011011000101100010001101001001101110110000000000\r\n" + 
+			"0000011101101100010111011011000101100010001101001001101110110000000000\r\n" + 
+			"0000011101101100010111011011000101100010001101001001101110110000000000\r\n" + 
+			"0000011101101100010111011011000101100010001101001001101110110000000000\r\n" + 
+			"0000011101101100010111011011000101100010001101001001101110110000000000\r\n" + 
+			"0000000000000000000000000000000000000000000000000000000000000000000000\r\n" + 
+			"0000000000000000000000000000000000000000000000000000000000000000000000";
+
+}
