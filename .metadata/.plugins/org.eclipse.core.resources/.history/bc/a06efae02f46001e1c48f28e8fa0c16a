@@ -1,0 +1,99 @@
+package start.상호의_배틀필드_1873;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Tank {
+	int r;
+	int c;
+	char dir;
+}
+
+class Map {
+	char[][] map;
+	Map(int H) {
+		this.map = new char[H][];
+	}
+}
+
+public class Solution {
+
+	public static void main(String[] args) {
+//		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(input);
+		
+		int[] dr = { -1, 1, 0, 0 };
+		int[] dc = { 0, 0, -1, 1 };
+		
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) { 
+			int H = sc.nextInt(), W = sc.nextInt();
+			Map map = new Map(H);
+			for (int h = 0; h < H; h++) {
+				map.map[h] = sc.next().toCharArray();
+				System.out.println(Arrays.toString(map.map[h]));
+			}
+			
+			Tank tank = new Tank();
+			pos: for (int h = 0; h < H; h++) {
+				for (int w = 0; w < W; w++) {
+					switch (map.map[h][w]) {
+						case '^':
+							tank.dir = 'U';
+							tank.r = h;
+							tank.c = w;
+							break pos;
+						case 'v':
+							tank.dir = 'D';
+							tank.r = h;
+							tank.c = w;
+							break pos;
+						case '<':
+							tank.dir = 'L';
+							tank.r = h;
+							tank.c = w;
+							break pos;
+						case '>':
+							tank.dir = 'R';
+							tank.r = h;
+							tank.c = w;
+							break pos;
+					}
+				}
+			}
+			
+			int N = sc.nextInt();
+			String cmd = sc.next();
+			
+			
+		}
+		
+		
+		sc.close();
+	}
+	
+	static void move(int r, int c, char dir, Map map) {
+		switch (dir) {
+			case 'U':
+				if (map.map[r - 1][c] == '.') {
+					
+				}
+		}
+			
+	}
+	
+	static void shoot(int r, int c, char dir) {
+		
+	}
+	
+
+	static String input = "1\r\n" + 
+			"4 6\r\n" + 
+			"*.*..*\r\n" + 
+			"*.....\r\n" + 
+			"..-...\r\n" + 
+			"^.*#..\r\n" + 
+			"10\r\n" + 
+			"SRSSRRUSSR\r\n";
+
+}
