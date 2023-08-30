@@ -1,0 +1,61 @@
+package 집합.햄버거_다이어트_5215;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Ingredient {
+	int score;
+	int cal;
+	Ingredient(){}
+	Ingredient(int score, int cal) {
+		this.score = score;
+		this.cal = cal;
+	}
+}
+
+public class Solution {
+	
+	public static ArrayList<Integer> cals;
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) {
+			int N = sc.nextInt(), L = sc.nextInt();
+			boolean[] sel = new boolean[N];
+			Ingredient[] ingr = new Ingredient[N];
+			for (int n = 0; n < N; n++) {
+				int ti = sc.nextInt();
+				int ki = sc.nextInt();
+				ingr[n] = new Ingredient(ti, ki);
+			}
+			powerset(0, ingr, sel, N, L);
+			System.out.println(cals);
+		}
+		
+		sc.close();
+	}
+	
+	public static void powerset(int idx, Ingredient[] ingr, boolean[] sel, int N, int L) {
+		int calSum = 0;
+		int scoreSum = 0;
+		int maxScore = 0;
+		if (idx == N) {
+			for (int i = 0; i < N; i++) {
+				if (sel[i]) {
+					calSum += ingr[i].cal;
+					scoreSum += ingr[i].score;
+				}
+			}
+			cals.add(scoreSum);
+			return;
+		}
+		
+		sel[idx] = false;
+		powerset(idx + 1, ingr, sel, N, L);
+		
+		sel[idx] = true;
+		powerset(idx + 1, ingr, sel, N, L);
+	}
+}
