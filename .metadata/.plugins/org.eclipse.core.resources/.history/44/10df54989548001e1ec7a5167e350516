@@ -1,0 +1,30 @@
+package 백트래킹.규영이와_인영이의_카드게임;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) {
+			List<Integer> a = new ArrayList<>();
+			for (int i = 0; i < 9; i++) {
+				a.add(sc.nextInt());
+			}
+			List<Integer> b = new ArrayList<>();
+			IntStream.rangeClosed(1, 18).forEach(b::add);
+			a.forEach(b::remove);
+			System.out.println(t);
+			System.out.println(a);
+			System.out.println(b);
+		}
+		
+		sc.close();
+	}
+
+}
