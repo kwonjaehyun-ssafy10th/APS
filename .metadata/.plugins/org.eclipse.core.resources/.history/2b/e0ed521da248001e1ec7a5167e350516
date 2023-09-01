@@ -1,0 +1,50 @@
+package 백트래킹.N_Queen_2806;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Solution {
+	public static int N;
+	public static int ans;
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) {
+			N = sc.nextInt();
+			ans = 0;
+			List<int[]> pos = new ArrayList<>();
+			recur(0, 0, pos);
+			System.out.println(String.format("#%d %d", t, ans));
+			
+		}
+		
+		sc.close();
+	}
+	
+	public static void recur(int r, int n, List<int[]> pos) {
+		if (n == N) {
+			ans++;
+			return;
+		}
+		
+		for (int i = 0; i < N; i++) {
+			if (check(r, i, n, pos)) {
+				pos.add(new int[] {r, i});
+				recur(r + 1, n + 1, pos);
+			}
+		}
+		pos.remove(pos.size() - 1);
+	}
+	
+	public static boolean check(int r, int c, int n, List<int[]> pos) {
+		for (int[] queen: pos) {
+			if(queen[0] == r || queen[1] == c || queen[0] - r == queen[1] - c)
+				return false;
+		}
+		return true;
+	}
+
+}

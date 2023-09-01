@@ -1,0 +1,28 @@
+package 백트래킹.N_Queen_2806;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) {
+			int N = sc.nextInt();
+			int ans = 0;
+			List<int[2]> = new ArrayList<>();
+			for (int r = 0; r < N; r++) {
+				for (int c = 0; c < N; c++) {
+					
+				}
+			}
+			
+		}
+		
+		sc.close();
+	}
+
+}
