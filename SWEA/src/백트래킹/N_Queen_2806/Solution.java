@@ -1,8 +1,5 @@
 package 백트래킹.N_Queen_2806;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Solution {
@@ -16,8 +13,9 @@ public class Solution {
 		for (int t = 1; t <= T; t++) {
 			N = sc.nextInt();
 			ans = 0;
-			List<int[]> pos = new ArrayList<>();
-			recur(0, 0, pos);
+			int[] pos = new int[N];
+			recur(0, pos);
+			
 			System.out.println(String.format("#%d %d", t, ans));
 			
 		}
@@ -25,28 +23,24 @@ public class Solution {
 		sc.close();
 	}
 	
-	public static void recur(int r, int n, List<int[]> pos) {
-		if (n == N) {
-			for (int[] queen: pos) {
-				System.out.println(Arrays.toString(queen));
-			}
+	public static void recur(int r, int[] pos) {
+		if (r == N) {
 			ans++;
 			return;
 		}
 		
 		for (int i = 0; i < N; i++) {
 			if (check(r, i, pos)) {
-				pos.add(new int[] {r, i});
-				recur(r + 1, n + 1, pos);
+				pos[r] = i;
+				recur(r + 1, pos);
 			}
 		}
-		if (pos.size() > 0) pos.remove(pos.size() - 1);
-		
+		return;
 	}
 	
-	public static boolean check(int r, int c, List<int[]> pos) {
-		for (int[] queen: pos) {
-			if(queen[0] == r || queen[1] == c || queen[0] - r == queen[1] - c || queen[0] - r == c - queen[1])
+	public static boolean check(int r, int c, int[] pos) {
+		for (int i = 0; i < r; i++) {
+			if(pos[i] == c || i - r == pos[i] - c || i - r == c - pos[i])
 				return false;
 		}
 		return true;
