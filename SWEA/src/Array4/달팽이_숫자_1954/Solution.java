@@ -21,18 +21,18 @@ public class Solution {
 			while (num <= N * N) {
 				for (int i = 0; i < rep; i++) {
 					switch (dir % 4) {
-						case 0:
-							c++;
-							break;
-						case 1:
-							r++;
-							break;
-						case 2:
-							c--;
-							break;
-						case 3:
-							r--;
-							break;
+					case 0:
+						c++;
+						break;
+					case 1:
+						r++;
+						break;
+					case 2:
+						c--;
+						break;
+					case 3:
+						r--;
+						break;
 					}
 					map[r][c] = num++;
 				}
@@ -40,7 +40,7 @@ public class Solution {
 					rep--;
 				}
 			}
-			
+
 			System.out.printf("#%d\n", t);
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < N; j++) {

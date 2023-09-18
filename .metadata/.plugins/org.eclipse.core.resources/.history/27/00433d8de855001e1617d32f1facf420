@@ -1,0 +1,50 @@
+package Graph.최장_경로_2814;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Node {
+	int value;
+	ArrayList<Integer> adjList;
+	
+	Node(int value) {
+		this.value = value;
+	}
+}
+
+public class Solution {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) {
+			int N = sc.nextInt(), M = sc.nextInt();
+			bool[] visited = new bool[N];
+			Node[] nodeList = new Node[N];
+			for (int n = 0; n < N; n++) {
+				nodeList[n] = new Node(n + 1);
+			}
+			for (int m = 0; m < M; m++) {
+				int x = sc.nextInt(), y = sc.nextInt();
+				nodeList[x - 1].adjList.add(y);
+			}
+			
+		}
+		
+		sc.close();
+	}
+	
+	int recur(int[] visited, Node[] nodeList, int s, int x, int cnt) {
+		if (s == x) return cnt;
+		
+		for (int y: nodeList[s - 1].adjList) {
+			if (!visited[y]) {
+				
+			}
+		}
+		
+	}
+
+}

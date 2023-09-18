@@ -29,7 +29,7 @@ public class Solution {
 			}
 			System.out.println(String.format("#%d %d", t + 1, cnt));
 		}
-		
+
 		sc.close();
 
 	}

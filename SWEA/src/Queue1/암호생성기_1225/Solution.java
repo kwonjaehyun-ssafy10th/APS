@@ -6,8 +6,8 @@ public class Solution {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
-		while(sc.hasNextInt()) {
+
+		while (sc.hasNextInt()) {
 			int t = sc.nextInt();
 			int len = 8;
 			int[] queue = new int[len];
@@ -16,8 +16,9 @@ public class Solution {
 			}
 			int decrease = 1;
 			int i = 0;
-			while(true) {
-				if (decrease == 6) decrease = 1;
+			while (true) {
+				if (decrease == 6)
+					decrease = 1;
 				queue[i % len] -= decrease++;
 				if (queue[i % len] <= 0) {
 					queue[i % len] = 0;
@@ -31,9 +32,9 @@ public class Solution {
 				System.out.printf("%d ", queue[(i + j) % len]);
 			}
 			System.out.println();
-			
+
 		}
-		
+
 		sc.close();
 	}
 

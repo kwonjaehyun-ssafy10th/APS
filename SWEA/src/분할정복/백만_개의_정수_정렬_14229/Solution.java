@@ -10,7 +10,6 @@ import java.util.StringTokenizer;
 public class Solution {
 	public static int N = 10;
 	public static int M = 5;
-	
 
 	public static int[] sortedArr = new int[N];
 
@@ -58,5 +57,5 @@ public class Solution {
 		for (int i = left; i <= right; i++)
 			arr[i] = sortedArr[i];
 	}
-	
+
 }

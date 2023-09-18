@@ -1,0 +1,72 @@
+package Graph.최장_경로_2814;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Node {
+	int value;
+	ArrayList<Integer> adjList;
+
+	Node(int value) {
+		this.value = value;
+	}
+}
+
+public class Solution {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) {
+			int ans = 1;
+			int N = sc.nextInt(), M = sc.nextInt();
+			if (N == 1)
+				ans = 1;
+			else {
+				Node[] nodeList = new Node[N];
+				for (int n = 0; n < N; n++) {
+					nodeList[n] = new Node(n + 1);
+				}
+				for (int m = 0; m < M; m++) {
+					int x = sc.nextInt(), y = sc.nextInt();
+					System.out.println(nodeList[x - 1]);
+					System.out.println(nodeList[x - 1].adjList);
+					if (!nodeList[x - 1].adjList.contains(y)) {
+						nodeList[x - 1].adjList.add(y);
+					}
+					if (!nodeList[y - 1].adjList.contains(x)) {
+						nodeList[y - 1].adjList.add(x);
+					}
+				}
+				ans = 1;
+				for (int i = 1; i < N; i++) {
+					boolean[] visited = new boolean[N];
+					for (int j = 0; j < nodeList[i - 1].adjList.size(); j++) {
+						int res = recur(visited, nodeList, i, nodeList[i - 1].adjList.get(j), 2);
+						if (res > ans)
+							ans = res;
+					}
+				}
+			}
+			System.out.println(String.format("#%d %d", t, ans));
+		}
+
+		sc.close();
+	}
+
+	static int recur(boolean[] visited, Node[] nodeList, int s, int p, int cnt) {
+		if (s == p)
+			return cnt - 1;
+		for (int y : nodeList[p - 1].adjList) {
+			if (!visited[y]) {
+				visited[y] = true;
+				recur(visited, nodeList, s, y, cnt + 1);
+				visited[y] = false;
+			}
+		}
+
+		return 0;
+	}
+
+}

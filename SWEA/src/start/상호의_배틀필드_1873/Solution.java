@@ -10,7 +10,10 @@ class Tank {
 
 class Map {
 	char[][] map;
-	Map() {	}
+
+	Map() {
+	}
+
 	Map(int H, int W) {
 		this.map = new char[H][W];
 	}
@@ -20,7 +23,7 @@ public class Solution {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+
 		int T = sc.nextInt();
 		for (int t = 1; t <= T; t++) {
 			int H = sc.nextInt(), W = sc.nextInt();
@@ -61,7 +64,7 @@ public class Solution {
 					move(tank.r, tank.c, c, map, tank);
 					tank.dir = c;
 				}
-				
+
 			}
 			System.out.printf("#%d ", t);
 			for (int h = 0; h < H; h++) {

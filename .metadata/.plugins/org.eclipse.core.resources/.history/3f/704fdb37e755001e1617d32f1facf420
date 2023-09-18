@@ -1,0 +1,38 @@
+package Graph.최장_경로_2814;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Node {
+	int value;
+	ArrayList adjList;
+}
+
+public class Solution {
+	static int N;
+	static int M;
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) {
+			int N = sc.nextInt(), M = sc.nextInt();
+			int[] visited = new int[N];
+			Node[ nodeList = ();
+			for (int m = 0; m < M; m++) {
+				
+			}
+			
+		}
+		
+		sc.close();
+	}
+	
+	int recur(int[][] graph, int s, int x, int cnt) {
+		
+		
+	}
+
+}

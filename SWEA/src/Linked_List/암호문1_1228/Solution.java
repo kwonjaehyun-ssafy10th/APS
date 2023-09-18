@@ -6,7 +6,7 @@ public class Solution {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+
 		int T = 10;
 		for (int t = 1; t <= T; t++) {
 			int N = sc.nextInt();
@@ -21,7 +21,7 @@ public class Solution {
 			}
 			int C = sc.nextInt();
 			for (int c = 0; c < C; c++) {
-				String cmd = sc.next();			
+				String cmd = sc.next();
 				int x = sc.nextInt(), y = sc.nextInt();
 				Node[] ins = new Node[y];
 				for (int i = 0; i < y; i++) {
@@ -31,7 +31,7 @@ public class Solution {
 					ins[i].link = ins[i + 1];
 				}
 				Node cur = sll.head;
-				
+
 				for (int i = 0; i < x; i++) {
 					cur = cur.link;
 				}
@@ -45,10 +45,9 @@ public class Solution {
 				cur = cur.link;
 			}
 			System.out.println();
-			
+
 		}
-		
-		
+
 		sc.close();
 	}
 
@@ -57,7 +56,10 @@ public class Solution {
 class Node {
 	public int data;
 	public Node link;
-	public Node() {}
+
+	public Node() {
+	}
+
 	public Node(int data) {
 		this.data = data;
 	}
@@ -66,7 +68,10 @@ class Node {
 class SinglyLinkedList {
 	public Node head = new Node();
 	public int size = 0;
-	public SinglyLinkedList() {}
+
+	public SinglyLinkedList() {
+	}
+
 	public SinglyLinkedList(int size) {
 		this.size = size;
 	}

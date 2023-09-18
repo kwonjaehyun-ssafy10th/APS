@@ -7,9 +7,9 @@ public class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
-		for(int i = 0 ; i < T; i++) {
+		for (int i = 0; i < T; i++) {
 			int max = -1;
-			for(int j = 0;j < 10; j++) {
+			for (int j = 0; j < 10; j++) {
 				max = Math.max(max, sc.nextInt());
 			}
 			System.out.println(String.format("#%d %d", i + 1, max));

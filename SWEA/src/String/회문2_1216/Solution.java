@@ -12,7 +12,7 @@ public class Solution {
 //		Scanner sc = new Scanner(System.in);
 		Scanner sc = new Scanner(new File("C:\\Users\\SSAFY\\Desktop\\APS\\SWEA\\src\\String\\회문2_1216\\input.txt"));
 //		Scanner sc = new Scanner(input);
-		
+
 		int T = 10;
 		int N = 100;
 
@@ -47,11 +47,12 @@ public class Solution {
 							}
 							if (flagV) {
 								if (map[c + j][r] != map[i - j][r]) {
-									flagV = false;	
+									flagV = false;
 								}
 							}
-							
-							if (!flagH && !flagV) break;
+
+							if (!flagH && !flagV)
+								break;
 						}
 						if (flagH) {
 							longestH = i - c + 1;
@@ -68,9 +69,9 @@ public class Solution {
 //								System.out.println("ans: " + ans + ", temp: " + temp);
 //								System.out.println(String.format("(t, r, c, i, temp): (%d, %d, %d, %d, %d)", t, r, c, i, temp));
 								ans = temp;
-								
+
 							}
-								
+
 							break length;
 						}
 					}
@@ -83,12 +84,7 @@ public class Solution {
 
 		sc.close();
 	}
-	
-	public static String input = "1\r\n" + 
-			"AABAA\r\n" + 
-			"ABCBB\r\n" + 
-			"ABABC\r\n" + 
-			"CCBBA\r\n" + 
-			"AABCA";
+
+	public static String input = "1\r\n" + "AABAA\r\n" + "ABCBB\r\n" + "ABABC\r\n" + "CCBBA\r\n" + "AABCA";
 
 }

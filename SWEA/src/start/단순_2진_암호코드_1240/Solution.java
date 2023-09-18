@@ -10,7 +10,7 @@ public class Solution {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+
 		Map<Integer, Integer> map = new HashMap<>();
 		List<Integer> list = new ArrayList<>();
 		list.add(Integer.parseInt("1101", 2));
@@ -23,13 +23,11 @@ public class Solution {
 		list.add(Integer.parseInt("111011", 2));
 		list.add(Integer.parseInt("110111", 2));
 		list.add(Integer.parseInt("1011", 2));
-		
+
 		for (int i = 0; i < 10; i++) {
 			map.put(list.get(i), i);
 		}
-		
-		
-		
+
 		int T = sc.nextInt();
 		for (int t = 1; t <= T; t++) {
 			int N = sc.nextInt(), M = sc.nextInt();
@@ -42,30 +40,35 @@ public class Solution {
 			}
 			int idx = M - 1;
 			for (int m = 55; m < M; m++) {
-				if (code.charAt(m - 1) == '1' && code.charAt(m) == '0') idx = m - 1;
+				if (code.charAt(m - 1) == '1' && code.charAt(m) == '0')
+					idx = m - 1;
 			}
 			idx -= 55;
 			int[] intCode = new int[8];
 			for (int i = 0; i < 8; i++) {
 				intCode[i] = Integer.parseInt(code.substring(idx + 7 * i, idx + 7 * (i + 1)), 2);
 			}
-			
+
 			int evenSum = 0;
 			int oddSum = 0;
 			int sum = 0;
 			for (int i = 0; i < 8; i++) {
-				if (i % 2 == 0) oddSum += map.get(intCode[i]);
-				else evenSum += map.get(intCode[i]);
+				if (i % 2 == 0)
+					oddSum += map.get(intCode[i]);
+				else
+					evenSum += map.get(intCode[i]);
 				sum += map.get(intCode[i]);
 			}
-			
+
 			int ans = 0;
-			if ((oddSum * 3 + evenSum) % 10 == 0) ans = sum;
-			else ans = 0;
-			
+			if ((oddSum * 3 + evenSum) % 10 == 0)
+				ans = sum;
+			else
+				ans = 0;
+
 			System.out.println(String.format("#%d %d", t, ans));
 		}
-		
+
 		sc.close();
 	}
 

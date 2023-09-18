@@ -15,10 +15,10 @@ public class Solution {
 	public static int b;
 	public static int win;
 	public static int lose;
-	
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+
 		int T = sc.nextInt();
 		for (int t = 1; t <= T; t++) {
 			deck = new ArrayList<>();
@@ -34,10 +34,10 @@ public class Solution {
 			perm(0, 0);
 			System.out.println(String.format("#%d %d %d", t, win, lose));
 		}
-		
+
 		sc.close();
 	}
-	
+
 	public static void perm(int idx, int visited) {
 		if (idx == N) {
 			a = 0;
@@ -49,13 +49,16 @@ public class Solution {
 					b += deck.get(i) + result.get(i);
 				}
 			}
-			if (a > b) win++;
-			else lose++;
+			if (a > b)
+				win++;
+			else
+				lose++;
 			return;
 		}
-		
+
 		for (int i = 0; i < N; i++) {
-			if ((visited & (1 << i)) > 0) continue;
+			if ((visited & (1 << i)) > 0)
+				continue;
 			result.set(idx, deck2.get(i));
 			perm(idx + 1, visited | (1 << i));
 		}

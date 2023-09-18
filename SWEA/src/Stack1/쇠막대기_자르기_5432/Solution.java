@@ -11,7 +11,7 @@ public class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 //		Scanner sc = new Scanner(input);
-		
+
 		int T = sc.nextInt();
 		for (int t = 1; t <= T; t++) {
 			Stack<Character> st = new Stack<>();
@@ -26,22 +26,19 @@ public class Solution {
 					st.pop();
 					if (prev == '(') {
 						cnt += st.size();
-					}
-					else cnt++;
+					} else
+						cnt++;
 				}
 				prev = c;
-				
+
 			}
-			
-		
+
 			System.out.println(String.format("#%d %d", t, cnt));
 		}
-		
+
 		sc.close();
 	}
-	
-	public static String input = "2\r\n" + 
-			"()(((()())(())()))(())\r\n" + 
-			"(((()(()()))(())()))(()())";
+
+	public static String input = "2\r\n" + "()(((()())(())()))(())\r\n" + "(((()(()()))(())()))(()())";
 
 }

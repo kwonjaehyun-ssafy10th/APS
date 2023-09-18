@@ -3,10 +3,10 @@ package 집합.햄버거_다이어트_5215;
 import java.util.Scanner;
 
 public class Solution {
-	
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+
 		int T = sc.nextInt();
 		for (int t = 1; t <= T; t++) {
 			int N = sc.nextInt(), L = sc.nextInt();
@@ -15,7 +15,7 @@ public class Solution {
 				ingr[n][0] = sc.nextInt();
 				ingr[n][1] = sc.nextInt();
 			}
-			
+
 			int scoreSum;
 			int calSum;
 			int maxScore = 0;
@@ -28,13 +28,13 @@ public class Solution {
 						calSum += ingr[j][1];
 					}
 				}
-				if (calSum <= L && maxScore < scoreSum) maxScore = scoreSum; 
+				if (calSum <= L && maxScore < scoreSum)
+					maxScore = scoreSum;
 			}
-			
-			
+
 			System.out.println(String.format("#%d %d", t, maxScore));
 		}
-		
+
 		sc.close();
 	}
 }
