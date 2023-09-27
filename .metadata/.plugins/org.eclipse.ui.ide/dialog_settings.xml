@@ -31,6 +31,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\재현\취업\부트캠프\SSAFY\SSAFY 10기\코드 백업\APS\SWEA"/>
 			<item value="C:\재현\취업\부트캠프\SSAFY\SSAFY 10기\코드 백업\APS"/>
 		</list>
 	</section>
