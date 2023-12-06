@@ -11,8 +11,8 @@ public class Main {
 		sc.close();
 	}
 	
-	static int oper(int a, int b) {
-		return (a + b) * (a - b);
+	static long oper(int a, int b) {
+		return (long) (a + b) * (a - b);
 	}
 
 }
