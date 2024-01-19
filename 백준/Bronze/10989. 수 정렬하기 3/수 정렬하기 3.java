@@ -17,10 +17,12 @@ public class Main {
 			arr[--num]++;
 		}
 		for (int i = 0; i < 10000; i++) {
-			for (int j = 0; j < arr[i]; j++) {
-				bw.write(String.valueOf(i + 1));
-				bw.newLine();
-			}
+            if (0 < arr[i]) {
+                for (int j = 0; j < arr[i]; j++) {
+				    bw.write(String.valueOf(i + 1));
+				    bw.newLine();
+			    }   
+            }
 		}
 		
 		br.close();
