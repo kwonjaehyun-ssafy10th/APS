@@ -10,8 +10,10 @@ public class Main {
 		int M = 1234567891;
 		String str = sc.next();
 		Long sum = 0L;
+		
 		for (int i = 0; i < L; i++) {
-			sum += Integer.valueOf(str.charAt(i) - 96) * pow(r, i);
+			sum += (str.charAt(i) - 'a' + 1) * pow(r, i, M);
+			sum %= M;
 		}
 		sum %= M;
 		System.out.println(sum);
@@ -19,10 +21,10 @@ public class Main {
 		sc.close();
 	}
 	
-	static long pow(int a, int b) {
+	static Long pow(long a, long b, long M) {
 		Long ans = 1L;
 		for (int i = 0; i < b; i++) {
-			ans *= a;
+			ans = (ans * a) % M; 
 		}
 		return ans;
 	}
