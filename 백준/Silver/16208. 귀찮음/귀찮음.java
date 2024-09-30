@@ -8,17 +8,17 @@ public class Main {
 		
 		int n = sc.nextInt();
 		int[] arr = new int[n];
-		int sum = 0;
+		long sum = 0;
 		for (int i = 0; i < n; i++) {
 			Integer l = sc.nextInt();
-			sum += l;
+			sum += (long) l;
 			arr[i] = l;
 		}
 		Arrays.sort(arr);
-		int total = 0;
+		long total = 0;
 		for (int i = 0; i < n - 1; i++) {
-			total += arr[i] * (sum - arr[i]);
-			sum -= arr[i];
+			total += (long) arr[i] * (sum - (long) arr[i]);
+			sum -= (long) arr[i];
 		}
 		System.out.println(total);
 		
